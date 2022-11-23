@@ -15,7 +15,7 @@ public class exercise1 {
         int i;
         for (i = 0; i < list.length; i++) {
             System.out.print(list[i]);
-            if(i<(list.length-1)){
+            if(i<list.length-1){
                 System.out.print(", ");
             }
             int elements = list[i];

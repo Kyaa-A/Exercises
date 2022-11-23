@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class advanceexercise2 {
+public class exercise9 {
 
     //Exercise 2 – Advance Search Names in 1D Array – Part 2 
 
@@ -18,21 +18,19 @@ public class advanceexercise2 {
         System.out.println("***********************************************************************");
         do{
             System.out.print("Please enter the Student Name:\t\t");
-        String name = scan.nextLine();
-
+            String name = scan.nextLine();
+            
         System.out.println("-----------------------------------------------------------------------");
         
         int i;
         for (i = 0; i < nameList.length; i++) {
-            if(name.equals(nameList[i])){
+            if(name.equalsIgnoreCase(nameList[i])){
                 examine = true;
             }
         }
         if(examine == true){
             System.out.print("NAME FOUND, Do you want to Search another name? (Y/N):\t\t");
-
-        }
-        else{
+        } else{
             System.out.print("No Name Found, Do you want to Search another name? (Y/N):\t");
         }
 
@@ -40,7 +38,7 @@ public class advanceexercise2 {
         System.out.println();
 
         }
-        while(loop.equals("Y"));
+        while(loop.equalsIgnoreCase("Y"));
         System.out.println("SEARCHING STOPPED");  
         scan.close(); 
     }

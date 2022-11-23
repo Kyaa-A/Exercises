@@ -2,15 +2,15 @@
 /* Modify the program Exercise 1 so that it computes and prints the sum of each column of
 the array. And determine the largest result. */
 
-public class twodexercise2 {
+public class exercise6 {
     public static void main(String[] args) {
         
         int table[][] = {
-            {23,34,50,21,10},
-            {12,22,10,6,4},
-            {4,67,16,40,56},
-            {82,85,29,30,7},
-            {6,34,34,45,79}
+                        {23,34,50,21,10},
+                        {12,22,10,6,4},
+                        {4,67,16,40,56},
+                        {82,85,29,30,7},
+                        {6,34,34,45,79}
         };
         int colSum = 0;
         int largestResult = 0;
@@ -31,7 +31,6 @@ public class twodexercise2 {
                 colSum = i+1;
             }
         }
-        System.out.println("");
-        System.out.println("The Largest Sum is Column " +colSum+ ": "+largestResult);
+        System.out.println("\nThe Largest Sum is Column " +colSum+ ": "+largestResult);
     }
 }
