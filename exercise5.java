@@ -6,6 +6,9 @@ row. And determine the largest result. */
 public class exercise5 {
     public static void main(String[] args) {
         
+        int rowSum = 0;
+        int largestResult = 0;
+        int rowTotal;
         int table[][] = {
                         {23,34,50,21,10},
                         {12,22,10,6,4},
@@ -13,9 +16,6 @@ public class exercise5 {
                         {82,85,29,30,7},
                         {6,34,34,45,79}
         };
-        int rowSum = 0;
-        int largestResult = 0;
-        int rowTotal;
 
         int i;
         for (i = 0; i < table.length; i++){
