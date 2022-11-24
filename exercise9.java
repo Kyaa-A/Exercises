@@ -24,7 +24,7 @@ public class exercise9{
         
         int i;
         for (i = 0; i < nameList.length; i++) {
-            if(name.equalsIgnoreCase(nameList[i])){
+            if(name.equals(nameList[i])){
                 examine = true;
             }
         }
@@ -38,7 +38,7 @@ public class exercise9{
         System.out.println();
 
         }
-        while(loop.equalsIgnoreCase("Y"));
+        while(loop.equals("Y"));
         System.out.println("SEARCHING STOPPED");  
         scan.close(); 
     }

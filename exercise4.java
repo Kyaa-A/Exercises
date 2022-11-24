@@ -14,10 +14,10 @@ public class exercise4 {
         int oddNum[] = new int[10];
         int decision = 0;
 
-        System.out.println("***********INPUT***********\n");
+        System.out.println("*************INPUT***********\n");
 
         for (int i = 0; i < num.length; i++) {
-            System.out.print("Enter a number:\t");
+            System.out.print("\tEnter a number:   ");
             num[i] = scan.nextInt();
         }
         scan.close();
@@ -32,7 +32,7 @@ public class exercise4 {
             }
         }
 
-        System.out.println("\n***********OUTPUT***********\n");
+        System.out.println("\n*************OUTPUT***********\n");
         System.out.print("Even Elements:\t");
         for (int i = 0; i < evenNum.length-3; i++) {
             if (evenNum[i] != 0) {

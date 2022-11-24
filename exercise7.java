@@ -30,5 +30,6 @@ public class exercise7 {
             }
             System.out.println();
         }
+        System.out.println();
     }   
 }
