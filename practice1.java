@@ -12,6 +12,7 @@ public class practice1 {
         for (int i = 0; i < num.length; i++) {
    
             if (num[i] > largest) {
+                
             secondLargest = largest;
             largest = num[i];
 
