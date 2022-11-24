@@ -1,18 +1,20 @@
-import java.util.Scanner;
-import java.util.ArrayList;
-
-    //Exercise 4 ― Odd and Even using array
-    /* Ask 10 numbers from the user then determine the odd and even numbers entered by the user */
+    //Exercise 3 ― Reversed Display
+    //Having the same elements from Exercise 1, 
+    /* create a java program that display the elements with indexes: 0,2,4,6,8 */
 
 public class test {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
 
-        int num[] = new int[10];
-        ArrayList <Integer> evenNum = new ArrayList<Integer>();
-        ArrayList <Integer> oddNum = new ArrayList<Integer>();
+        int list[] = {12,23,120,60,320,45,93,21,60,310};
 
-        
+        System.out.print("Elements:\t");
 
+        for (int i = 0; i < list.length; i+=2) {
+        if(i>0){
+            System.out.print(", ");
+        }
+        System.out.print(list[i]);
+        }
+        System.out.println();
     }
 }
