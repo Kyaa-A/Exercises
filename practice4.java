@@ -19,11 +19,13 @@ public class practice4 {
 
         int table[][] = new int[row+1][column+1];
 
+        System.out.println();
         for (int i = 1; i < table.length; i++) {
             for (int j = 1; j < table[i].length; j++) {
                  System.out.print("*");
             }
             System.out.println();
         }
+        System.out.println();
     }
 }

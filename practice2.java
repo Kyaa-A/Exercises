@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-/*     2. Write a Java program to find the scond smallest element in an array.*/    
+/*     2. Write a Java program to find the second smallest element in an array.*/    
 
 public class practice2 {
     public static void main(String[] args) {
