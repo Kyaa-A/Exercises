@@ -20,8 +20,7 @@ public class practice4 {
         int table[][] = new int[row+1][column+1];
 
         for (int i = 1; i < table.length; i++) {
-            int j;
-            for (j = 1; j < table[i].length; j++) {
+            for (int j = 1; j < table[i].length; j++) {
                  System.out.print("*");
             }
             System.out.println();
