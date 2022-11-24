@@ -1,7 +1,7 @@
 // Exercise 1 ― Sum of Each Row 
 // Use the table above and use it to create an initialized 2D Array
-/* Complete the following program so that it computes the sum of the elements in each
-row. And determine the largest result. */
+/* Complete the following program so that it computes the sum of 
+the elements in each row. And determine the largest result. */
 
 public class exercise5 {
     public static void main(String[] args) {
@@ -20,7 +20,6 @@ public class exercise5 {
         int i;
         for (i = 0; i < table.length; i++){
             rowTotal = 0;
-
             int j;
             for (j = 0; j < table.length; j++){
             rowTotal = rowTotal + table[i][j];
@@ -35,5 +34,4 @@ public class exercise5 {
         }
         System.out.println("\nThe Largest Sum is Row " +rowSum+ ": "+largestResult);
     }
-    
 }

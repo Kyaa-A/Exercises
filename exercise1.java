@@ -12,8 +12,7 @@ public class exercise1 {
 
         System.out.print("ELEMENTS: ");
 
-        int i;
-        for (i = 0; i < list.length; i++) {
+        for (int i = 0; i < list.length; i++) {
             System.out.print(list[i]);
             if(i<list.length-1){
                 System.out.print(", ");

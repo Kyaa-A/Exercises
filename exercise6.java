@@ -1,6 +1,6 @@
 // Exercise 2 ― Sum of Each Column 
-/* Modify the program Exercise 1 so that it computes and prints the sum of each column of
-the array. And determine the largest result. */
+/* Modify the program Exercise 1 so that it computes and prints 
+the sum of each column of the array. And determine the largest result. */
 
 public class exercise6 {
     public static void main(String[] args) {
@@ -19,7 +19,6 @@ public class exercise6 {
         int j;
         for (j = 0; j < table.length; j++) {
             colTotal = 0;
-
             int i;
             for (i = 0; i < table.length; i++) {
             colTotal = colTotal + table[i][j];

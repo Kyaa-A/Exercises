@@ -2,8 +2,9 @@ import java.util.Scanner;
 
 public class exercise4 {
     
-    //Exercise 4 ― Odd and Even using array
-    /* Ask 10 numbers from the user then determine the odd and even numbers entered by the user */
+    /* Exercise 4 ― Odd and Even using array
+    Ask 10 numbers from the user then determine 
+    the odd and even numbers entered by the user */
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -31,7 +32,6 @@ public class exercise4 {
             }
         }
 
-
         System.out.println("\n***********OUTPUT***********\n");
         System.out.print("Even Elements:\t");
         for (int i = 0; i < evenNum.length-3; i++) {
@@ -55,7 +55,5 @@ public class exercise4 {
             }
         }
         System.out.print(oddNum[oddNum.length-1] +"\n");
-
     }
-
 }

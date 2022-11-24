@@ -1,8 +1,9 @@
 import java.util.Scanner;
 
 //Exercise 3 - Multiplication
-/* Create a program that will ask the user to enter any number of columns and rows for the
-multiplication table. Check the sample below. */
+/* Create a program that will ask the user 
+to enter any number of columns and rows for 
+the multiplication table. Check the sample below. */
 
 public class exercise7 {
     public static void main(String[] args) {
@@ -29,6 +30,5 @@ public class exercise7 {
             }
             System.out.println();
         }
-        
     }   
 }

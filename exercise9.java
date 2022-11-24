@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class exercise9 {
+public class exercise9{
 
     //Exercise 2 – Advance Search Names in 1D Array – Part 2 
 
@@ -30,7 +30,7 @@ public class exercise9 {
         }
         if(examine == true){
             System.out.print("NAME FOUND, Do you want to Search another name? (Y/N):\t\t");
-        } else{
+        }else{
             System.out.print("No Name Found, Do you want to Search another name? (Y/N):\t");
         }
 
