@@ -20,9 +20,9 @@ public class problem3 {
         
         int penny = cents;
 
-        System.out.println("\nOutput: ");
 
         if(num>=1 && num<=99){
+            System.out.println("\nOutput: ");
             System.out.println("\t" + num + " Cents in coins:");
 
             if(num>=25){
@@ -41,6 +41,7 @@ public class problem3 {
                 }
             }
         }else{
+            System.out.print("\nOutput: ");
             System.out.println("\nInvalid-Maximum is only 1-99: " + num);
         }
         System.out.println();
