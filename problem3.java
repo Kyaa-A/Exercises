@@ -5,21 +5,18 @@ public class problem3 {
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Input:");
-        System.out.print("Enter the amount of change from 1 to 99:\t");
+        System.out.print("\tEnter the amount of change from 1 to 99:\t");
         int num = scan.nextInt();
+        scan.close();
+        
         int cents = num;
-
         int quarter = cents / 25;
         cents %= 25;
-
         int dime = cents / 10;
         cents %= 10;
-        
         int nickels = cents / 5;
         cents %= 5;
-        
         int penny = cents;
-
 
         if(num>=1 && num<=99){
             System.out.println("\nOutput: ");
@@ -42,7 +39,7 @@ public class problem3 {
             }
         }else{
             System.out.print("\nOutput: ");
-            System.out.println("\nInvalid-Maximum is only 1-99: " + num);
+            System.out.println("\n\tInvalid-Maximum is only 1-99");
         }
         System.out.println();
     }
