@@ -16,7 +16,7 @@ public class payslipown {
             {"0124","Jojo"}
         };
 
-        System.out.print("\tPAYSLIP\n");
+        System.out.println("\tPAYSLIP\n");
 
         System.out.print("Employee ID:\t");
         String id = scan.nextLine();
@@ -39,30 +39,30 @@ public class payslipown {
 
         System.out.println();
 
-        System.out.print("Rate per day:\t\t ");
+        System.out.print("Rate per day:\t\t PHP ");
         double rpd = scan.nextDouble();
 
-        System.out.print("SSS Contribution:\t ");
+        System.out.print("SSS Contribution:\t PHP ");
         double sss = scan.nextDouble();
 
-        System.out.print("PAGIBIG Contribution:\t ");
+        System.out.print("PAGIBIG Contribution:\t PHP ");
         double ibig = scan.nextDouble();
 
-        System.out.print("PhilHealth Contribution: ");
+        System.out.print("PhilHealth Contribution: PHP ");
         double phealth = scan.nextDouble();
 
         System.out.println();
 
-        System.out.print("No. of days Worked:\t ");
+        System.out.print("No. of days Worked:\t    ");
         double w = scan.nextDouble();
 
-        System.out.print("No. of hours Late:\t ");
+        System.out.print("No. of hours Late:\t    ");
         double l = scan.nextDouble();
 
-        System.out.print("No. of hours Undertime:\t ");
+        System.out.print("No. of hours Undertime:\t    ");
         double u = scan.nextDouble();
 
-        System.out.print("No. of days Absent:\t ");
+        System.out.print("No. of days Absent:\t    ");
         double a = scan.nextDouble();
 
         System.out.println("\nRules for late and undertime");
@@ -77,5 +77,31 @@ public class payslipown {
 
         System.out.println();
         
+        System.out.println("================INCOME=================\n");
+        double bp = rpd*w;
+        System.out.println("Basic Pay\t\tPHP " + df.format(bp));
+        System.out.println("\t\t       ______________");
+        double tl = bp;
+        System.out.println("TOTAL INCOME\t\tPHP " + df.format(tl));
+
+        System.out.println();
+
+        System.out.println("===============DEDUCTION===============\n");
+
+        System.out.println("SSS Cont.\t\t PHP " + df.format(sss));
+        System.out.println("PAGIBIG Cont.\t\t PHP " + df.format(ibig));
+        System.out.println("PhilHealth Cont.\t PHP " + df.format(phealth));
+        System.out.println("Late \t\t         PHP " + df.format(rfa));
+        double undertime = u*rflu;
+        System.out.println("Undertime \t\t PHP " + df.format(undertime));
+        double absent = a*rfa;
+        System.out.println("Absent \t\t\t PHP " + df.format(absent));
+        System.out.println("\t\t       ______________");
+        double td = sss+ibig+phealth+rfa+undertime+absent;
+        System.out.println("TOTAL DEDUCTION \t PHP " + df.format(td));
+
+        System.out.println();
+
+        System.out.println("TAKE HOME PAY:  \t PHP " + df.format(tl - td));
     }
 }
