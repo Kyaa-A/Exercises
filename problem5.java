@@ -7,7 +7,7 @@ public class problem5 {
         System.out.println("Sample");
         System.out.print("Input the year: ");
         int year = scan.nextInt();
-
+        
         System.out.println("\n----Output---");
         if (year % 4 == 0){
             if ( year % 100 == 0){
