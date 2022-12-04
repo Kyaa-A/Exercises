@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.text.DecimalFormat;
-import java.util.Arrays;
 
 public class payslipown {
 
@@ -8,7 +7,8 @@ public class payslipown {
     public static void main(String[] args) {
         
         Scanner scan = new Scanner(System.in);
-
+        DecimalFormat df = new DecimalFormat();
+        
         String employee[][] = {
             {"0121","Joane May Delima"},
             {"0122","Juan Dela Cruz"},
