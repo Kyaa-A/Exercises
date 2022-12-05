@@ -78,32 +78,35 @@ public class testjava {
         System.out.println();
 
         ///////////////////////////////////////////////////////////////////////////////
-        System.out.println("================INCOME=================\n");
+        System.out.println("\t================INCOME===============\n");
         double bp = rpd * w;
-        System.out.println("Basic Pay\t\tPHP " + df.format(bp));
-        System.out.println("\t\t       __________");
+        System.out.println("\t   Basic Pay\t\tPHP " + df.format(bp));
+        System.out.println("\t\t\t       ____________");
         double tl = bp;
-        System.out.println("TOTAL INCOME\t\tPHP " + df.format(tl));
+        System.out.println("\t   TOTAL INCOME\t\tPHP " + df.format(tl));
 
         System.out.println();
 
-        System.out.println("===============DEDUCTION===============\n");
+        System.out.println("\t===============DEDUCTION=============\n");
 
-        System.out.println("SSS Cont.\t\t PHP " + df.format(sss));
-        System.out.println("PAGIBIG Cont.\t\t PHP " + df.format(ibig));
-        System.out.println("PhilHealth Cont.\t PHP " + df.format(phealth));
-        System.out.println("Late \t\t         PHP " + df.format(rfa));
+        System.out.println("\t   SSS Cont.\t\t PHP " + df.format(sss));
+        System.out.println("\t   PAGIBIG Cont.\t PHP " + df.format(ibig));
+        System.out.println("\t   PhilHealth Cont.\t PHP " + df.format(phealth));
+        System.out.println("\t   Late \t         PHP " + df.format(rfa));
         double undertime = u * rflu;
-        System.out.println("Undertime \t\t PHP " + df.format(undertime));
+        System.out.println("\t   Undertime \t\t PHP " + df.format(undertime));
         double absent = a * rfa;
-        System.out.println("Absent \t\t\t PHP " + df.format(absent));
-        System.out.println("\t\t       __________");
+        System.out.println("\t   Absent \t\t PHP " + df.format(absent));
+        System.out.println("\t\t\t       ____________");
         double td = sss + ibig + phealth + rfa + undertime + absent;
-        System.out.println("TOTAL DEDUCTION \t PHP " + df.format(td));
+        System.out.println("\t   TOTAL DEDUCTION \t PHP " + df.format(td));
 
         System.out.println();
 
-        System.out.println("TAKE HOME PAY:  \t PHP " + df.format(tl - td));
+        System.out.println("\t   TAKE HOME PAY:  \t PHP " + df.format(tl-td));
+        System.out.println();
+        System.out.println("\t"+"=".repeat(37));
+        System.out.println();
         ///////////////////////////////////////////////////////////////////////////////
     }
 }
