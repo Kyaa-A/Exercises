@@ -17,7 +17,7 @@ public class receipt{
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
         Date date = new Date();  
 
     System.out.println(" "+"*".repeat(30));
@@ -80,7 +80,7 @@ public class receipt{
 
         System.out.println("\t\tPURCHASE RECEIPT");
         System.out.println(" Cashier: " + name);
-        System.out.print(" Date: " + formatter.format(date) + " ".repeat(8));
+        System.out.print(" Date: " + formatter.format(date) + " ".repeat(16));
         System.out.println("O.R No.: " + ORnum);
         System.out.println(" "+"*".repeat(45));
         System.out.println(" Qty.\tItem/s\t\t\tPrice/s");
