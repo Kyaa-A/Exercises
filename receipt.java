@@ -1,19 +1,30 @@
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class receipt{
+    
+    public static void clearscreen(){
+        try {
+            if (System.getProperty("os.name").contains("Windows"))
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            else
+                Runtime.getRuntime().exec("clear");
+        } catch (IOException | InterruptedException ex) {}
+    }
+
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("*".repeat(25));
-        System.out.print("Enter Cashier Name:\t\t");
-        String name = scan.next();
-        System.out.print("Enter O.R. No:\t\t\t");
-        String ORnum = scan.next();
-        System.out.println("*".repeat(25));
-        System.out.print("Enter number of items:\t\t");
-        int numOfItems = scan.nextInt();
-        System.out.println("*".repeat(25));
+    System.out.println(" "+"*".repeat(30));
+        System.out.print(" Enter Cashier Name:\t");
+            String name = scan.next();
+        System.out.print(" Enter O.R. No:\t\t");
+            String ORnum = scan.next();
+    System.out.println(" "+"*".repeat(30));
+        System.out.print(" Enter number of items:\t");
+            int numOfItems = scan.nextInt();
+    System.out.println(" "+"*".repeat(30));
         
         String products[] = new String[numOfItems];
         int prices[] = new int[numOfItems];
@@ -23,21 +34,21 @@ public class receipt{
         int productQuantity = 0;
         for (int i = 1; i <= numOfItems; i++) {
 
-            System.out.println("Product " + i);
-
-            System.out.print("Enter Item Name:\t\t");
+            System.out.println(" Product " + i);
+            System.out.println();
+            System.out.print(" Enter Item Name:\t");
             productName = scan.next();
             products[i-1] = productName;
 
-            System.out.print("Enter Item Price:\t\t");
+            System.out.print(" Enter Item Price:\t");
             int productPrice = scan.nextInt();
             prices[i-1] = productPrice;
 
-            System.out.print("Enter Item Quantity:\t\t");
+            System.out.print(" Enter Item Quantity:\t");
             productQuantity = scan.nextInt();
             quantities[i-1] = productQuantity;
             
-            System.out.println("-".repeat(25));
+            System.out.println(" "+"-".repeat(30));
         }
 
         int productAmount = 0;
@@ -46,20 +57,29 @@ public class receipt{
             productAmount = prices[i] * quantities[i];
             finalProductAmount += productAmount;
         }
-        System.out.println(finalProductAmount);
 
+        double tax = finalProductAmount*0.05;
+        double totalPayment = finalProductAmount+tax;
+        System.out.println(" TOTAL PAYMENT:\t\t"+totalPayment);
+        System.out.println(" "+"*".repeat(30));
 
+        System.out.print(" Enter Customer Payment:  ");
+        int payment = scan.nextInt();
 
-        int totalPayment = 0;
-        for (int i = 0; i < prices.length; i++) {
-            totalPayment += prices[i];
+        while(payment<totalPayment){
+            System.out.print(" Enter Customer Payment:  ");
+            payment = scan.nextInt();
         }
+        System.out.println(" "+"*".repeat(30));
 
-        System.out.println(totalPayment);
+        clearscreen();
 
-        System.out.println(Arrays.toString(products));
-        System.out.println(Arrays.toString(prices));
-        System.out.println(Arrays.toString(quantities));
+        System.out.println("\t\tPURCHASE RECEIPT");
+        System.out.println(" Cashier: " + name);
+        System.out.println(" Date: 1/21/2017\t\tO.R.No.: " + ORnum);
+        System.out.println(" "+"*".repeat(45));
+        System.out.println(" Qty.\tItem/s\t\t\tPrice/s");
 
+    
     }
 }
