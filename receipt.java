@@ -1,5 +1,7 @@
 import java.io.IOException;
 import java.util.Scanner;
+import java.text.SimpleDateFormat;  
+import java.util.Date;  
 
 public class receipt{
     
@@ -13,7 +15,10 @@ public class receipt{
     }
 
     public static void main(String[] args) {
+
         Scanner scan = new Scanner(System.in);
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+        Date date = new Date();  
 
     System.out.println(" "+"*".repeat(30));
         System.out.print(" Enter Cashier Name:\t");
@@ -75,7 +80,8 @@ public class receipt{
 
         System.out.println("\t\tPURCHASE RECEIPT");
         System.out.println(" Cashier: " + name);
-        System.out.println(" Date: 1/21/2017\t\tO.R.No.: " + ORnum);
+        System.out.print(" Date: " + formatter.format(date) + " ".repeat(8));
+        System.out.println("O.R No.: " + ORnum);
         System.out.println(" "+"*".repeat(45));
         System.out.println(" Qty.\tItem/s\t\t\tPrice/s");
 
