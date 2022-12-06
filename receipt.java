@@ -55,8 +55,8 @@ public class receipt{
             System.out.println(" "+"-".repeat(30));
         }
 
-        int productAmount = 0;
-        int finalProductAmount = 0;
+        double productAmount = 0;
+        double finalProductAmount = 0;
         for (int i = 0; i < numOfItems; i++) {
             productAmount = prices[i] * quantities[i];
             finalProductAmount += productAmount;
@@ -64,11 +64,11 @@ public class receipt{
 
         double tax = finalProductAmount*0.05;
         double totalPayment = finalProductAmount+tax;
-        System.out.println(" TOTAL PAYMENT:\t\t"+totalPayment);
+        System.out.println(" TOTAL PAYMENT:\t    Php " + totalPayment);
         System.out.println(" "+"*".repeat(30));
 
         System.out.print(" Enter Customer Payment:  ");
-        int payment = scan.nextInt();
+        double payment = scan.nextInt();
 
         while(payment<totalPayment){
             System.out.print(" Enter Customer Payment:  ");
@@ -78,13 +78,44 @@ public class receipt{
 
         clearscreen();
 
+        System.out.println("\t\tGaisano Grand Mall");
+        System.out.println("\t Mc Arthur Highway, Digos City");
+        System.out.println("\tTel. #. 553-2847 Fax: 679652382");
+        System.out.println("\t   GTS Reg. No. 00023648294");
+        System.out.println("\t\tRCB: 529873290");
+
+        System.out.println();
+
         System.out.println("\t\tPURCHASE RECEIPT");
         System.out.println(" Cashier: " + name);
-        System.out.print(" Date: " + formatter.format(date) + " ".repeat(16));
+        System.out.print(" Date: " + formatter.format(date) + " ".repeat(15));
         System.out.println("O.R No.: " + ORnum);
         System.out.println(" "+"*".repeat(45));
-        System.out.println(" Qty.\tItem/s\t\t\tPrice/s");
+        System.out.println(" Qty.\tItem/s\t\t\t    Price/s");
+        System.out.println(" "+"-".repeat(45));    
 
-    
+        int quantity = 0;
+        String product = "";
+        double totalPrice = 0;
+        for (int i = 0; i < numOfItems; i++) {
+            quantity = quantities[i];
+            product = products[i];
+            totalPrice = prices[i] * quantities[i];
+            System.out.printf("  %-8d%-10s%22.2f ", quantity, product, totalPrice);
+            System.out.println();
+        }
+
+        System.out.println(" "+"*".repeat(45));
+
+        double change = payment - totalPayment;
+        System.out.printf("%-8s%29s%.2f \n", " SUBTOTAL", "PHP ", finalProductAmount);
+        System.out.printf("%-8s%30s%.2f \n", " VAT(5%)", "PHP ", tax);
+        System.out.println();
+        System.out.printf("%-8s%30s%.2f \n", " TOTAL", "PHP ", totalPayment);
+        System.out.println();
+        System.out.printf("%-8s%30s%.2f \n", " CASH", "PHP ", payment);
+        System.out.printf("%-8s%30s%.2f \n", " CHANGE", "PHP ", change);
+        System.out.println();
+        System.out.println("\t      THANK YOU FOR SHOPPING!\n");
     }
 }
