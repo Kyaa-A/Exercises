@@ -20,15 +20,15 @@ public class receipt{
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
         Date date = new Date();  
 
-    System.out.println(" "+"*".repeat(30));
-        System.out.print(" Enter Cashier Name:\t");
+    System.out.println(" "+"*".repeat(32));
+        System.out.print(" Enter Cashier Name:\t ");
             String name = scan.next();
-        System.out.print(" Enter O.R. No:\t\t");
+        System.out.print(" Enter O.R. No:\t\t ");
             String ORnum = scan.next();
-    System.out.println(" "+"*".repeat(30));
-        System.out.print(" Enter number of items:\t");
+    System.out.println(" "+"*".repeat(32));
+        System.out.print(" Enter number of items:\t ");
             int numOfItems = scan.nextInt();
-    System.out.println(" "+"*".repeat(30));
+    System.out.println(" "+"*".repeat(32));
         
         String products[] = new String[numOfItems];
         int prices[] = new int[numOfItems];
@@ -40,19 +40,19 @@ public class receipt{
 
             System.out.println(" Product " + i);
             System.out.println();
-            System.out.print(" Enter Item Name:\t");
+            System.out.print(" Enter Item Name:\t ");
             productName = scan.next();
             products[i-1] = productName;
 
-            System.out.print(" Enter Item Price:\t");
+            System.out.print(" Enter Item Price:\t ");
             int productPrice = scan.nextInt();
             prices[i-1] = productPrice;
 
-            System.out.print(" Enter Item Quantity:\t");
+            System.out.print(" Enter Item Quantity:\t ");
             productQuantity = scan.nextInt();
             quantities[i-1] = productQuantity;
             
-            System.out.println(" "+"-".repeat(30));
+            System.out.println(" "+"-".repeat(32));
         }
 
         double productAmount = 0;
@@ -64,8 +64,8 @@ public class receipt{
 
         double tax = finalProductAmount*0.05;
         double totalPayment = finalProductAmount+tax;
-        System.out.println(" TOTAL PAYMENT:\t    Php " + totalPayment);
-        System.out.println(" "+"*".repeat(30));
+        System.out.println(" TOTAL PAYMENT:\t     Php " + totalPayment);
+        System.out.println(" "+"*".repeat(32));
 
         System.out.print(" Enter Customer Payment:  ");
         double payment = scan.nextInt();
@@ -74,7 +74,7 @@ public class receipt{
             System.out.print(" Enter Customer Payment:  ");
             payment = scan.nextInt();
         }
-        System.out.println(" "+"*".repeat(30));
+        System.out.println(" "+"*".repeat(32));
 
         clearscreen();
 
@@ -101,7 +101,7 @@ public class receipt{
             quantity = quantities[i];
             product = products[i];
             totalPrice = prices[i] * quantities[i];
-            System.out.printf("  %-8d%-10s%22.2f ", quantity, product, totalPrice);
+            System.out.printf("  %-8d%-13s%22.2f ", quantity, product, totalPrice);
             System.out.println();
         }
 
