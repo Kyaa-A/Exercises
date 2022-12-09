@@ -17,18 +17,20 @@ public class receipt{
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
+        SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");  
         Date date = new Date();  
-
-    System.out.println(" "+"*".repeat(32));
-        System.out.print(" Enter Cashier Name:\t ");
+    
+        System.out.println("\tPURCHASE RECEIPT SYSTEM");
+        System.out.println("\t  INPUT DETAILS BELOW");
+    System.out.println(" "+"*".repeat(35));
+        System.out.print(" Enter Cashier Name:\t  ");
             String name = scan.next();
-        System.out.print(" Enter O.R. No:\t\t ");
+        System.out.print(" Enter O.R. No:\t\t  ");
             String ORnum = scan.next();
-    System.out.println(" "+"*".repeat(32));
-        System.out.print(" Enter number of items:\t ");
+    System.out.println(" "+"*".repeat(35));
+        System.out.print(" Enter number of items:\t  ");
             int numOfItems = scan.nextInt();
-    System.out.println(" "+"*".repeat(32));
+    System.out.println(" "+"*".repeat(35));
         
         String products[] = new String[numOfItems];
         int prices[] = new int[numOfItems];
@@ -40,19 +42,19 @@ public class receipt{
 
             System.out.println(" Product " + i);
             System.out.println();
-            System.out.print(" Enter Item Name:\t ");
+            System.out.print(" Enter Item Name:\t  ");
             productName = scan.next();
             products[i-1] = productName;
 
-            System.out.print(" Enter Item Price:\t ");
+            System.out.print(" Enter Item Price:\t  ");
             int productPrice = scan.nextInt();
             prices[i-1] = productPrice;
 
-            System.out.print(" Enter Item Quantity:\t ");
+            System.out.print(" Enter Item Quantity:\t  ");
             productQuantity = scan.nextInt();
             quantities[i-1] = productQuantity;
             
-            System.out.println(" "+"-".repeat(32));
+            System.out.println(" "+"-".repeat(35));
         }
 
         double productAmount = 0;
@@ -61,24 +63,24 @@ public class receipt{
             productAmount = prices[i] * quantities[i];
             finalProductAmount += productAmount;
         }
-
+        
         double tax = finalProductAmount*0.05;
         double totalPayment = finalProductAmount+tax;
-        System.out.println(" TOTAL PAYMENT:\t     Php " + totalPayment);
-        System.out.println(" "+"*".repeat(32));
+        System.out.printf("%s%12s%.2f ", " TOTAL PAYMENT:",  "PHP ", totalPayment);
+        System.out.println("\n "+"*".repeat(35));
 
-        System.out.print(" Enter Customer Payment:  ");
+        System.out.print(" Enter Customer Payment:   ");
         double payment = scan.nextInt();
 
         while(payment<totalPayment){
-            System.out.print(" Enter Customer Payment:  ");
+            System.out.print(" Enter Customer Payment:   ");
             payment = scan.nextInt();
         }
-        System.out.println(" "+"*".repeat(32));
+        System.out.println(" "+"*".repeat(35));
 
         clearscreen();
 
-        System.out.println("\t\tGaisano Grand Mall");
+        System.out.println("\n\t\tGaisano Grand Mall");
         System.out.println("\t Mc Arthur Highway, Digos City");
         System.out.println("\tTel. #. 553-2847 Fax: 679652382");
         System.out.println("\t   GTS Reg. No. 00023648294");
@@ -86,7 +88,7 @@ public class receipt{
 
         System.out.println();
 
-        System.out.println("\t\tPURCHASE RECEIPT");
+        System.out.println("\t\tPURCHASE RECEIPT\n");
         System.out.println(" Cashier: " + name);
         System.out.print(" Date: " + formatter.format(date) + " ".repeat(15));
         System.out.println("O.R No.: " + ORnum);
@@ -101,20 +103,20 @@ public class receipt{
             quantity = quantities[i];
             product = products[i];
             totalPrice = prices[i] * quantities[i];
-            System.out.printf("  %-8d%-13s%22.2f ", quantity, product, totalPrice);
+            System.out.printf(" %-7d%-13s%21.2f ", quantity, product, totalPrice);
             System.out.println();
         }
 
         System.out.println(" "+"*".repeat(45));
 
         double change = payment - totalPayment;
-        System.out.printf("%-8s%29s%.2f \n", " SUBTOTAL", "PHP ", finalProductAmount);
-        System.out.printf("%-8s%30s%.2f \n", " VAT(5%)", "PHP ", tax);
+        System.out.printf("%-8s%28s%.2f \n", " SUBTOTAL", "PHP ", finalProductAmount);
+        System.out.printf("%-8s%29s%.2f \n", " VAT(5%)", "PHP ", tax);
         System.out.println();
-        System.out.printf("%-8s%30s%.2f \n", " TOTAL", "PHP ", totalPayment);
+        System.out.printf("%-8s%29s%.2f \n", " TOTAL", "PHP ", totalPayment);
         System.out.println();
-        System.out.printf("%-8s%30s%.2f \n", " CASH", "PHP ", payment);
-        System.out.printf("%-8s%30s%.2f \n", " CHANGE", "PHP ", change);
+        System.out.printf("%-8s%29s%.2f \n", " CASH", "PHP ", payment);
+        System.out.printf("%-8s%29s%.2f \n", " CHANGE", "PHP ", change);
         System.out.println();
         System.out.println("\t      THANK YOU FOR SHOPPING!\n");
     }
