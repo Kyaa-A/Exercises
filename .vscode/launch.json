@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ageidentifier",
+            "request": "launch",
+            "mainClass": "ageidentifier",
+            "projectName": "Exercises_3de634f6"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
