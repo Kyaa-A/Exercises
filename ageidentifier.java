@@ -10,15 +10,15 @@ public class ageidentifier {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         LocalDateTime now = LocalDateTime.now();
 
-        String dateNow = dtf.format(now);
-        System.out.println("Current Date: " + dateNow);
-
         int mybday[] = new int[3];
         int currdate[] = new int[3];
 
         boolean datevalid = true;
         String birthday = "";
-        
+
+        String dateNow = dtf.format(now);
+        System.out.println("Current Date: " + dateNow);
+
         do {
             try {
                 System.out.print("\nEnter Your Birthday (MM/dd/yyyy): ");
@@ -44,7 +44,13 @@ public class ageidentifier {
 
         int age = currdate[2] - mybday[2];
 
+        if (mybday[0] > currdate[0]) {
+            age--;
+        } else if (mybday[0] == currdate[0]) {
+            if (mybday[1] > currdate[1]) {
+                age--;
+            }
+        }
         System.out.println("\nYou are " + age + " years old. " + "\n");
-
     }
 }
