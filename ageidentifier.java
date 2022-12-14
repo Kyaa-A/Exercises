@@ -16,26 +16,30 @@ public class ageidentifier {
         int mybday[] = new int[3];
         int currdate[] = new int[3];
 
+        boolean datevalid = true;
+        String birthday = "";
         do {
-            System.out.print("\nEnter Your Birthday (MM/dd/yyyy): ");
-            String birthday = scan.nextLine();
-
-            String date[] = dateNow.split("/");
-            String bday[] = birthday.split("/");
-
-            for (int i = 0; i < bday.length; i++) {
-                mybday[i] = Integer.parseInt(bday[i]);
-            }
-
-            for (int i = 0; i < date.length; i++) {
-                currdate[i] = Integer.parseInt(date[i]);
-            }
-
-            if (mybday[0] > 12 || mybday[1] > 32 || mybday[2] < 0) {
+            try {
+                System.out.print("\nEnter Your Birthday (MM/dd/yyyy): ");
+                birthday = scan.nextLine();
+                dtf.parse(birthday);
+                datevalid = true;
+            } catch (Exception e) {
                 System.out.println("Error, Try Again...");
+                datevalid = false;
             }
+        } while (!datevalid);
 
-        } while (mybday[0] > 12 || mybday[1] > 32 || mybday[2] < 0);
+        String date[] = dateNow.split("/");
+        String bday[] = birthday.split("/");
+
+        for (int i = 0; i < bday.length; i++) {
+            mybday[i] = Integer.parseInt(bday[i]);
+        }
+
+        for (int i = 0; i < date.length; i++) {
+            currdate[i] = Integer.parseInt(date[i]);
+        }
 
         int age = currdate[2] - mybday[2];
 
