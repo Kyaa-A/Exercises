@@ -18,6 +18,7 @@ public class ageidentifier {
 
         boolean datevalid = true;
         String birthday = "";
+        
         do {
             try {
                 System.out.print("\nEnter Your Birthday (MM/dd/yyyy): ");
